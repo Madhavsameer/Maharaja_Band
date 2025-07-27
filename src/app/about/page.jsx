@@ -123,7 +123,7 @@ function Counter({
   icon,
   title,
   value,
-}: {
+}, {
   icon: JSX.Element;
   title: string;
   value: number;
