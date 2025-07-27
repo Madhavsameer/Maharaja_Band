@@ -3,14 +3,20 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Function to extract file ID from Google Drive share link
-function getDriveFileId(url) {
+// ✅ TypeScript-safe function
+function getDriveFileId(url: string): string {
   const match = url.match(/\/d\/(.*?)\//);
   return match ? match[1] : "";
 }
 
+type MediaItem = {
+  type: "video" | "image";
+  src: string;
+  title: string;
+};
+
 export default function GalleryPage() {
-  const media = [
+  const media: MediaItem[] = [
     {
       type: "video",
       src: "https://drive.google.com/file/d/10SP7Mgasz8cl1EPqgag8WwbfAt-_MUcP/view?usp=drivesdk",
