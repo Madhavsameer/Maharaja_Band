@@ -124,7 +124,7 @@ function Counter({
   title,
   value,
 }, {
-  icon: JSX.Element;
+  icon: JSX,Element;
   title: string;
   value: number;
 }) {
