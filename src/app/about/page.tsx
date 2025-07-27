@@ -10,6 +10,32 @@ import {
   FaAward,
 } from "react-icons/fa";
 
+// ✅ Counter component correctly typed and fixed
+type CounterProps = {
+  icon: JSX.Element;
+  title: string;
+  value: number;
+};
+
+function Counter({ icon, title, value }: CounterProps) {
+  return (
+    <motion.div
+      className="bg-gray-800 shadow-xl rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
+      whileHover={{
+        rotate: [0, 2, -2, 0],
+        transition: { duration: 0.4 },
+      }}
+    >
+      <div className="text-yellow-400 text-4xl mb-2">{icon}</div>
+      <h3 className="text-3xl font-bold text-white">
+        <CountUp end={value} duration={3} />+
+      </h3>
+      <p className="text-gray-400 mt-1">{title}</p>
+    </motion.div>
+  );
+}
+
+// ✅ Main page component
 export default function AboutPage() {
   return (
     <>
@@ -25,7 +51,6 @@ export default function AboutPage() {
 
       <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white px-4 py-20">
         <div className="max-w-6xl mx-auto text-center">
-
           {/* Animated Typewriter Heading */}
           <motion.h1
             className="text-5xl font-extrabold text-yellow-400 mb-8"
@@ -115,32 +140,5 @@ export default function AboutPage() {
         </div>
       </div>
     </>
-  );
-}
-
-// Counter Component
-function Counter({
-  icon,
-  title,
-  value,
-}, {
-  icon: JSX,Element,
-  title: string,
-  value: number,
-}) {
-  return (
-    <motion.div
-      className="bg-gray-800 shadow-xl rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300"
-      whileHover={{
-        rotate: [0, 2, -2, 0],
-        transition: { duration: 0.4 },
-      }}
-    >
-      <div className="text-yellow-400 text-4xl mb-2">{icon}</div>
-      <h3 className="text-3xl font-bold text-white">
-        <CountUp end={value} duration={3} />+
-      </h3>
-      <p className="text-gray-400 mt-1">{title}</p>
-    </motion.div>
   );
 }
