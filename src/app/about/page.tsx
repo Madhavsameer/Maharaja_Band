@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
@@ -12,7 +12,7 @@ import {
 
 // ✅ Counter component correctly typed and fixed
 type CounterProps = {
-  icon: JSX.Element;
+  icon: ReactNode;
   title: string;
   value: number;
 };
