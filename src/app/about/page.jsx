@@ -124,9 +124,9 @@ function Counter({
   title,
   value,
 }, {
-  icon: JSX,Element;
-  title: string;
-  value: number;
+  icon: JSX,Element,
+  title: string,
+  value: number,
 }) {
   return (
     <motion.div
